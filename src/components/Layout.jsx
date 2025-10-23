@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
+    <div className="min-h-screen bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
       <div className="fixed inset-0 bg-[url('/src/assets/grid.svg')] bg-center opacity-10 pointer-events-none"></div>
       <Navbar />
       <main className="container mx-auto px-4 py-8 md:px-8 relative z-10">

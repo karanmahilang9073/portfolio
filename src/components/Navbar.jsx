@@ -5,13 +5,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 shadow-xl border-b border-gray-700">
+    <nav className="bg-linear-to-r from-gray-900 via-gray-800 to-gray-900 shadow-xl border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo - Left */}
           <div className="flex items-center w-1/4">
-            <Link to="/" className="flex-shrink-0 group">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent 
+            <Link to="/" className="flex-linear-0 group">
+              <span className="text-2xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent 
                 group-hover:from-purple-500 group-hover:to-blue-400 transition-all duration-300">
                 Logo
               </span>
