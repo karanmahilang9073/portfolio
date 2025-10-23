@@ -3,17 +3,17 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A full-stack web application built with React and Node.js.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      title: 'news app',
+      description: 'A real time news app built with reactjs and bootstrap and also used news API',
+      technologies: ['React', 'Bootstrap', 'news API'],
       image: '/project1.jpg',
       liveUrl: 'https://project1.com',
       githubUrl: 'https://github.com/yourusername/project1',
     },
     {
-      title: 'Project Two',
-      description: 'Modern UI/UX design implementation using Next.js and TailwindCSS.',
-      technologies: ['Next.js', 'TailwindCSS', 'Firebase'],
+      title: 'social-media app',
+      description: 'a social-media built with ReactJS, NodeJS, ExpressJS and MongoDB, where user can like, comment, create, delete and update their specific post',
+      technologies: ['ReactJS', 'TailwindCSS', 'NodeJS','ExpressJS','MongoDB'],
       image: '/project2.jpg',
       liveUrl: 'https://project2.com',
       githubUrl: 'https://github.com/yourusername/project2',

@@ -7,7 +7,7 @@ const Skills = () => {
       skills: [
         { name: 'React', level: 90 },
         { name: 'JavaScript', level: 85 },
-        { name: 'TypeScript', level: 80 },
+        // { name: 'TypeScript', level: 80 },
         { name: 'HTML/CSS', level: 90 },
         { name: 'Tailwind CSS', level: 85 },
       ],
@@ -27,9 +27,9 @@ const Skills = () => {
       skills: [
         { name: 'Git', level: 85 },
         { name: 'VS Code', level: 90 },
-        { name: 'Docker', level: 70 },
-        { name: 'AWS', level: 65 },
-        { name: 'Firebase', level: 75 },
+        { name: 'github', level: 70 },
+        { name: 'vercel', level: 65 },
+        // { name: 'Firebase', level: 75 },
       ],
     },
   ];

@@ -14,7 +14,7 @@ const Home = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-300">
-          Full Stack Developer | Blender 3d modelling
+          Full Stack Developer...
         </p>
         
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
