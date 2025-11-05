@@ -9,7 +9,7 @@ const Contact = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/karanmahilang9073",
       icon: (
         <svg
           className="w-6 h-6"
@@ -27,7 +27,7 @@ const Contact = () => {
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/karan-mahilang-b10423321/",
       icon: (
         <svg
           className="w-6 h-6"
