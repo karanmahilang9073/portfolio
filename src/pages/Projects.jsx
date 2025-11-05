@@ -3,12 +3,12 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
-      title: 'news app',
+      title: 'highway-delight',
       description: 'A real time news app built with reactjs and bootstrap and also used news API',
       technologies: ['React', 'Bootstrap', 'news API'],
       image: '/project1.jpg',
-      liveUrl: 'https://project1.com',
-      githubUrl: 'https://github.com/yourusername/project1',
+      liveUrl: 'highway-delight-1vp5.vercel.app',
+      githubUrl: 'https://github.com/karanmahilang9073/highway-delight',
     },
     {
       title: 'social-media app',
