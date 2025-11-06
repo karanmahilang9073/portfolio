@@ -6,7 +6,7 @@ const Projects = () => {
       title: 'highway-delight',
       description: 'A real time news app built with reactjs and bootstrap and also used news API',
       technologies: ['React', 'Bootstrap', 'news API'],
-      image: '/project1.jpg',
+      image: '/public/images/project1.png',
       liveUrl: 'https://highway-delight-1vp5.vercel.app',
       githubUrl: 'https://github.com/karanmahilang9073/highway-delight',
     },
