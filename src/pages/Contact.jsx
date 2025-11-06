@@ -1,8 +1,36 @@
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    setLoading(true);
+
+    // ✉️ Send email using EmailJS
+    emailjs
+      .sendForm(
+        "service_6phpl93", // EmailJS service ID
+        "template_bcmlcs2", // template ID
+        form.current,
+        "Mm_XeDt5dcx8iGq6v" // EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus("Message sent successfully!");
+          setLoading(false);
+          form.current.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setStatus("Something went wrong. Please try again later.");
+          setLoading(false);
+        }
+      );
   };
 
   const socialLinks = [
@@ -42,10 +70,10 @@ const Contact = () => {
 
   return (
     <div className="max-w-4xl mx-auto space-y-12 animate-fadeIn">
-      {/* Header Section with enhanced styling */}
+      {/* Header */}
       <div className="text-center space-y-4 relative">
-        <div className="absolute inset-0 blur-3xl bg-linear-to-r from-blue-500/20 to-purple-500/20 rounded-full"></div>
-        <h1 className="text-5xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent relative">
+        <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full"></div>
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent relative">
           Get In Touch
         </h1>
         <p className="mt-4 text-gray-300 text-lg relative">
@@ -53,102 +81,79 @@ const Contact = () => {
         </p>
       </div>
 
-      {/* Contact Form with enhanced styling */}
+      {/* Contact Form */}
       <div className="transform hover:scale-[1.01] transition-all duration-300">
-        <div className="bg-linear-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-8 backdrop-blur-sm border border-gray-700/50 shadow-2xl relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-grid-white/[0.02] -z-1"></div>
-          <div className="absolute inset-0 bg-linear-to-t from-gray-900/50 to-transparent -z-1"></div>
-
-          <form onSubmit={handleSubmit} className="space-y-8 relative">
+        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-8 backdrop-blur-sm border border-gray-700/50 shadow-2xl relative overflow-hidden">
+          <form ref={form} onSubmit={handleSubmit} className="space-y-8 relative">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div className="group">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-300 mb-2 transition-colors group-hover:text-blue-400"
-                >
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Name
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                    hover:border-blue-400/50 transition-all duration-300"
+                  name="user_name"
+                  className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
                 />
               </div>
-              <div className="group">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-300 mb-2 transition-colors group-hover:text-blue-400"
-                >
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Email
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
-                  className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 
-                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                    hover:border-blue-400/50 transition-all duration-300"
+                  name="user_email"
+                  className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   required
                 />
               </div>
             </div>
-            <div className="group">
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-gray-300 mb-2 transition-colors group-hover:text-blue-400"
-              >
+
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Subject
               </label>
               <input
                 type="text"
-                id="subject"
                 name="subject"
-                className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                  hover:border-blue-400/50 transition-all duration-300"
+                className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               />
             </div>
-            <div className="group">
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-300 mb-2 transition-colors group-hover:text-blue-400"
-              >
+
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Message
               </label>
               <textarea
-                id="message"
                 name="message"
                 rows={6}
-                className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                  hover:border-blue-400/50 transition-all duration-300 resize-none"
+                className="block w-full rounded-lg bg-gray-700/50 border border-gray-600 text-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
                 required
               />
             </div>
-            <div>
-              <button
-                type="submit"
-                className="w-full px-6 py-4 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 
-                  rounded-lg text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5
-                  shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 
-                  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-              >
-                Send Message
-              </button>
-            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
           </form>
+
+          {status && (
+            <p className="mt-6 text-center text-sm text-blue-400 animate-pulse">
+              {status}
+            </p>
+          )}
         </div>
       </div>
 
-      {/* Social Links with enhanced styling */}
+      {/* Social Links */}
       <div className="text-center space-y-6">
-        <h2 className="text-2xl font-semibold bg-linear-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-semibold bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">
           Connect With Me
         </h2>
         <div className="flex justify-center space-x-8">
