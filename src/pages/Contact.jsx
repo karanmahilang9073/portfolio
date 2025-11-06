@@ -72,8 +72,8 @@ const Contact = () => {
     <div className="max-w-4xl mx-auto space-y-12 animate-fadeIn">
       {/* Header */}
       <div className="text-center space-y-4 relative">
-        <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full"></div>
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent relative">
+        <div className="absolute inset-0 blur-3xl bg-linear-to-r from-blue-500/20 to-purple-500/20 rounded-full"></div>
+        <h1 className="text-5xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent relative">
           Get In Touch
         </h1>
         <p className="mt-4 text-gray-300 text-lg relative">
@@ -83,7 +83,7 @@ const Contact = () => {
 
       {/* Contact Form */}
       <div className="transform hover:scale-[1.01] transition-all duration-300">
-        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-8 backdrop-blur-sm border border-gray-700/50 shadow-2xl relative overflow-hidden">
+        <div className="bg-linear-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-8 backdrop-blur-sm border border-gray-700/50 shadow-2xl relative overflow-hidden">
           <form ref={form} onSubmit={handleSubmit} className="space-y-8 relative">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <div>
@@ -137,7 +137,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="w-full px-6 py-4 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
@@ -153,7 +153,7 @@ const Contact = () => {
 
       {/* Social Links */}
       <div className="text-center space-y-6">
-        <h2 className="text-2xl font-semibold bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">
+        <h2 className="text-2xl font-semibold bg-linear-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">
           Connect With Me
         </h2>
         <div className="flex justify-center space-x-8">
