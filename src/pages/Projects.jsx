@@ -4,9 +4,9 @@ const Projects = () => {
   const projects = [
     {
       title: 'highway-delight',
-      description: 'A real time news app built with reactjs and bootstrap and also used news API',
-      technologies: ['React', 'Bootstrap', 'news API'],
-      image: '/public/images/project1.png',
+      description: 'holidays booking app',
+      technologies: ['ReactJS', 'NodeJS','MongoDB','express','tailwindCSS'],
+      image: '/images/project1.png',
       liveUrl: 'https://highway-delight-1vp5.vercel.app',
       githubUrl: 'https://github.com/karanmahilang9073/highway-delight',
     },
@@ -16,7 +16,7 @@ const Projects = () => {
       technologies: ['ReactJS', 'TailwindCSS', 'NodeJS','ExpressJS','MongoDB'],
       image: '/project2.jpg',
       liveUrl: 'https://project2.com',
-      githubUrl: 'https://github.com/yourusername/project2',
+      githubUrl: 'https://github.com/karanmahilang9073',
     },
     // Add more projects as needed
   ];
